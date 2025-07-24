@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norivane for Cur8.capital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #212529;
+            background: #f8f9fa;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .download-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .download-button {
+            background: linear-gradient(135deg, #00B2A9 0%, #0A2342 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,178,169,0.3);
+        }
+
+        .brochure-content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 20mm;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page:not(:last-child) {
+            border-bottom: 2px dashed #e9ecef;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            letter-spacing: 0;
+        }
+
+        .logo .nor {
+            color: #0A2342;
+        }
+
+        .logo .i {
+            color: #00B2A9;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .logo .vane {
+            color: #0A2342;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #0A2342 0%, #00B2A9 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.4);
+        }
+
+        .hero-image::after {
+            content: '⚡';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0A2342;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0A2342;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0A2342;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #212529;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .comparison-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #00B2A9;
+            transition: transform 0.3s ease;
+            break-inside: avoid;
+        }
+
+        .comparison-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .comparison-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0A2342;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .comparison-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #00B2A9;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .old-way .comparison-title::before {
+            background: #dc3545;
+        }
+
+        .comparison-content {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .comparison-section {
+            margin-bottom: 30px;
+        }
+
+        .comparison-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0A2342;
+            margin-bottom: 8px;
+        }
+
+        .comparison-section p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #00B2A9 0%, #0A2342 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-banner h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+
+        .process-step {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+            break-inside: avoid;
+        }
+
+        .step-number {
+            background: #00B2A9;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .final-cta {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #00B2A9;
+        }
+
+        .cta-button {
+            background: #00B2A9;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #008a82;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 20px;
+        }
+
+        .page-2-hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .page-2-hero::before {
+            content: '🚀';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 48px;
+            opacity: 0.3;
+        }
+
+        .print-url {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .page {
+                padding: 15mm;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .hero-image {
+                height: 150px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                font-size: 12pt;
+            }
+            
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+            
+            .download-section {
+                display: none;
+            }
+            
+            .brochure-content {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+                max-width: none;
+                padding: 15mm;
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+            
+            .page:not(:last-child) {
+                border-bottom: none;
+            }
+
+            .comparison-grid {
+                display: table;
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 40px;
+            }
+
+            .comparison-item {
+                display: table-cell;
+                width: 50%;
+                vertical-align: top;
+                padding: 20px;
+                border: 1px solid #dee2e6;
+                background: #f8f9fa;
+                break-inside: avoid;
+            }
+
+            .comparison-item:first-child {
+                border-right: 2px solid #dc3545;
+            }
+
+            .comparison-item:last-child {
+                border-left: 2px solid #00B2A9;
+            }
+
+            .comparison-title {
+                font-size: 14pt;
+                font-weight: 600;
+                margin-bottom: 12pt;
+            }
+
+            .comparison-content {
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+
+            .comparison-section {
+                margin-bottom: 15pt;
+            }
+
+            .comparison-section h4 {
+                font-size: 12pt;
+                font-weight: 600;
+                margin-bottom: 6pt;
+            }
+
+            .comparison-section p {
+                font-size: 10pt;
+                line-height: 1.3;
+                margin-bottom: 10pt;
+            }
+
+            .process-step {
+                break-inside: avoid;
+                margin-bottom: 20pt;
+            }
+
+            .hero-image {
+                height: 150px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .cta-banner {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .step-number {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .cta-button {
+                display: none;
+            }
+
+            .print-url {
+                display: block;
+                background: #00B2A9;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 8px;
+                font-size: 16pt;
+                font-weight: 600;
+                margin: 20px auto;
+                text-align: center;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .contact-info {
+                font-size: 12pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="download-section">
+            <h2 style="color: #0A2342; margin-bottom: 15px;">Norivane for Cur8.capital</h2>
+            <p style="margin-bottom: 25px; color: #6c757d;">Revolutionary Mission. Revolutionary Methods.</p>
+            <button id="downloadPdf" class="download-button" onclick="window.print()">
+                📄 Download as PDF
+            </button>
+            <div style="margin-top: 15px; font-size: 14px; color: #6c757d;">
+                <p>Click the button above, then select "Save as PDF" in the print dialog</p>
+            </div>
+        </div>
+
+        <div class="brochure-content" id="brochureContent">
+            <!-- Page 1 -->
+            <div class="page">
+                <div class="logo"><span class="nor">nor</span><span class="i">i</span><span class="vane">vane</span></div>
+                
+                <div class="hero-section">
+                    <div class="hero-image"></div>
+                    <h1>Revolutionary Mission.<br>Revolutionary Methods.</h1>
+                    <p class="subtitle">
+                        At Cur8.capital, you're transforming private equity by making ethical, Sharia-compliant investments accessible to everyone. While you break down barriers for investors, we eliminate the operational bottlenecks holding your firm back.
+                    </p>
+                    <p class="subtitle">
+                        <strong>It's time to replace manual frustration with intelligent automation that gives you an unfair competitive advantage.</strong>
+                    </p>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-item old-way">
+                        <div class="comparison-title">The Old Way: Daily Frustrations</div>
+                        <div class="comparison-content">
+                            <div class="comparison-section">
+                                <h4>Deal Hunting Exhaustion</h4>
+                                <p>Endless searching through the same networks, constantly worrying that perfect opportunities are slipping by. It's like finding needles in country-sized haystacks.</p>
+                            </div>
+                            <div class="comparison-section">
+                                <h4>Due Diligence Drain</h4>
+                                <p>Your experts drowning in paperwork, PDFs, and spreadsheets. Costly, slow processes where missed details create post-acquisition nightmares.</p>
+                            </div>
+                            <div class="comparison-section">
+                                <h4>The "Extend & Pretend" Trap</h4>
+                                <p>Underperforming assets consuming capital and time while high-growth opportunities wait in the wings, eroding trust and slowing growth.</p>
+                            </div>
+                            <div class="comparison-section">
+                                <h4>Resource-Draining Reports</h4>
+                                <p>Manual, repetitive reporting that pulls your best talent away from value creation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-title">The AI-Powered Way: Your Unfair Advantage</div>
+                        <div class="comparison-content">
+                            <div class="comparison-section">
+                                <h4>Deals Find You</h4>
+                                <p>Intelligent 24/7 market scanning that learns your Sharia-compliant preferences and delivers high-potential opportunities directly to your desk.</p>
+                            </div>
+                            <div class="comparison-section">
+                                <h4>Due Diligence in Days</h4>
+                                <p>AI processes thousands of documents in minutes, flags risks, spots financial anomalies, and cross-references data automatically. Your team focuses on strategy, not paperwork.</p>
+                            </div>
+                            <div class="comparison-section">
+                                <h4>Data-Driven Decisions</h4>
+                                <p>Crystal-clear, real-time portfolio visibility. AI spots underperformance early, models strategy impacts, and guides improve/hold/divest decisions. No more guesswork.</p>
+                            </div>
+                            <div class="comparison-section">
+                                <h4>One-Click Reporting</h4>
+                                <p>Generate accurate, transparent reports automatically. Build unbreakable LP trust while staying ahead of regulatory changes like UK transparency rules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-banner">
+                    <h2>With Norivane, Cur8.capital doesn't just invest differently.<br>You operate differently.</h2>
+                </div>
+            </div>
+
+            <!-- Page 2 -->
+            <div class="page">
+                <div class="logo"><span class="nor">nor</span><span class="i">i</span><span class="vane">vane</span></div>
+                
+                <div class="page-2-hero">
+                    <h1>Your Path to Effortless Efficiency</h1>
+                    <p class="subtitle">
+                        We don't believe in confusing jargon or one-size-fits-all solutions. We believe in true partnership. Our process is simple, transparent, and built entirely around your unique needs.
+                    </p>
+                    <p><strong>Welcome to our Clarity & Direction Framework.</strong></p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>The Discovery Workshop</h3>
+                        <p>It begins with conversation, not consultation. We sit down to understand your vision, frustrations, and ambitions for Cur8.capital. We listen deeply, learn thoroughly, and map what success truly looks like for you. Consider it less workshop, more the foundation of a transformative partnership.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>The Strategic Audit</h3>
+                        <p>Next, we examine your operational engine. Our team carefully maps current workflows—from deal sourcing to LP reporting. The goal isn't criticism; it's discovering hidden bottlenecks and golden automation opportunities that deliver maximum impact.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>The Solution Blueprint</h3>
+                        <p>Here's where we draw your roadmap. Based on our audit, we present a clear, jargon-free proposal outlining exactly what we'll do, how we'll do it, and the value you'll gain. You'll see step-by-step plans, realistic timelines, and a vivid picture of your optimized future state.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>The Transformation</h3>
+                        <p>Time to build your competitive superpower. Our experts create and integrate tailored AI solutions while working seamlessly with your team for smooth transitions. We're not installing software; we're upgrading your firm's entire operational engine while it continues running.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Ongoing Evolution</h3>
+                        <p>Our partnership doesn't end at launch. We're your long-term strategic co-pilot, providing continuous support to ensure flawless operation. As technology evolves and your firm grows, we'll proactively suggest improvements to keep you ahead of the competitive curve.</p>
+                    </div>
+                </div>
+
+                <div class="final-cta">
+                    <h2>Ready to Find Your Direction?</h2>
+                    <p style="margin-bottom: 20px;">Let's free your team to focus on what you do best: discovering exceptional, ethical investments and democratizing private equity access for all.</p>
+                    
+                    <button class="cta-button">Schedule Your 30-Minute Discovery Call</button>
+                    
+                    <div class="print-url">
+                        Schedule Your 30-Minute Discovery Call<br>
+                        <strong>calendly.com/matthew-norivane/mb-30-minutes</strong>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <strong>Get Started Today</strong><br>
+                        www.norivane.com | us@norivane.com | +44 (0) 7356 224 125
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
